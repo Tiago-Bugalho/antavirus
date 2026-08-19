@@ -1,13 +1,5 @@
 {
   "version": 2,
-  "functions": {
-    "api/troll.js": {
-      "runtime": "nodejs20.x"
-    },
-    "api/troll.sh.js": {
-      "runtime": "nodejs20.x"
-    }
-  },
   "rewrites": [
     { "source": "/api/troll", "destination": "/api/troll.js" },
     { "source": "/api/troll.sh", "destination": "/api/troll.sh.js" }
