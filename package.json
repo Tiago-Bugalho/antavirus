@@ -1,0 +1,7 @@
+{
+  "name": "antavirus",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Uma trollagem serverless para a Vercel"
+}
