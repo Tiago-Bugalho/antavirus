@@ -1,7 +1,0 @@
-{
-  "version": 2,
-  "rewrites": [
-    { "source": "/api/troll", "destination": "/api/troll.js" },
-    { "source": "/api/troll.sh", "destination": "/bash.txt" }
-  ]
-}
