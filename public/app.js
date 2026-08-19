@@ -1,6 +1,6 @@
-let valor = 0
-function add(butao){
-    
-    valor
+
+{
+    let valor = +butao.innerText
+    butao.innerText = ++valor
     render()
 }
