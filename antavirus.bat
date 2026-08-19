@@ -11,7 +11,7 @@ for /L %%i in (1,1,20) do (
     ping 127.0.0.1 -n 1 -w 50 >nul
 )
 
-:: 2. Mostrar imagem em fullscreen por 7 segundos
+:: 2. Mostrar imagem em fullscreen por 30 segundos
 powershell.exe -NoProfile -WindowStyle Hidden -Command ^
 "Add-Type -AssemblyName System.Windows.Forms; ^
 Add-Type -AssemblyName System.Drawing; ^
@@ -33,8 +33,13 @@ $p.Image=[System.Drawing.Image]::FromStream($ms); ^
 $f.Controls.Add($p); ^
 $f.Show(); ^
 $f.Activate(); ^
+[System.Media.SystemSounds]::Exclamation.Play(); ^
+Start-Sleep -Milliseconds 300; ^
+[System.Media.SystemSounds]::Exclamation.Play(); ^
+Start-Sleep -Milliseconds 300;  ^
+[System.Media.SystemSounds]::Exclamation.Play(); ^
 $t=New-Object System.Windows.Forms.Timer; ^
-$t.Interval=7000; ^
+$t.Interval=30000; ^
 $t.Add_Tick({ ^
 $t.Stop(); ^
 $fechar=$true; ^
@@ -44,6 +49,5 @@ Get-Process mshta -ErrorAction SilentlyContinue ^| Stop-Process -Force ^
 $t.Start(); ^
 [System.Windows.Forms.Application]::Run()"
 
-:: 3. Finalizar tudo
-taskkill /F /IM mshta.exe >nul 2>&1
+:: 3. Finalizar
 exit /b
